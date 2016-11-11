@@ -3,9 +3,8 @@ title:
 account: pmanickavelu
 server: shinyapps.io
 appId: 137036
-bundleId: 611911
+bundleId: 611938
 url: https://pmanickavelu.shinyapps.io/DataProduct-Shiny/
-when: 1478867088.0294
+when: 1478868624.67429
 asMultiple: FALSE
 asStatic: FALSE
-ignoredFiles: data/james-river.csv|data/oostanaula-river.csv|data/west-branch-delaware-river.csv|data/wolf-river.csv
