@@ -10,10 +10,17 @@ library(shiny)
 shinyUI(fluidPage(
 
     # Application title
-    titlePanel("Rive Flow Data"),
+    titlePanel("River Flow Data"),
 
     # Sidebar with a slider input for number of bins
     verticalLayout(
+        mainPanel(
+            helpText("The app repersents data of flow of reiver from 1916 to 1960 the data points were collected on monthly basis."),
+            helpText("The Month and Date range slider help you select the period for which you want to view the data."),
+            helpText("The List Of rivers check boxes helps you select the reviers of which you want to view the data of"),
+            helpText("And The reiver col select boxes or dropdowns help you specify a color for them"),
+            width = 12
+        ),
         mainPanel(
             sidebarPanel(
                 sliderInput(
