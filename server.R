@@ -10,14 +10,16 @@ library(shiny)
 shinyServer(function(input, output) {
 
   output$distPlot <- renderPlot({
+    x    <- dget("shy_mat_data")
+    rangeOD <- seq(input$rangeOD[1],input$rangeOD[2])
+    rivers <- as.numeric(input$rivers)
+    if(length(rivers)==0){
+        rivers <- c(1,2,3,4)
+    }
+    colors <- c(c(input$james_col, input$oostanaula_col,input$delaware_col,input$wolf_col))
 
-    # generate bins based on input$bins from ui.R
-    x    <- faithful[, 2]
-    bins <- seq(min(x), max(x), length.out = input$bins + 1)
-
-    # draw the histogram with the specified number of bins
-    plot(x, breaks = bins, col = 'orangered', border = 'white',  type = "l")
-
+    matplot(x[rangeOD,rivers], col = colors[rivers], border = 'white',  type = "l" , ylab = "Water Flow", xlab = "From Jan 1916 to Dec 1960")
   })
 
 })
+
